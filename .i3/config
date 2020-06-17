@@ -15,8 +15,8 @@
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-font consolas 8
+font pango:DejaVu Sans Mono 8
+#font consolas 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -57,13 +57,14 @@ bindsym Mod4+F4 exec terminator -e ranger
 bindsym Mod4+F3 exec networkmanager_dmenu
 
 # start dmenu (a program launcher)
-bindsym Mod4+d exec dmenu_run 
+bindsym Mod4+d exec dmenu_run -nb '#1E2127' -sf '#98C379' -sb '#1E2127' -nf '#ABB2BF' 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym Mod4+d exec --no-startup-id i3-dmenu-desktop
 
 exec_always --no-startup-id nitrogen --restore&
+exec --no-startup-id compton
 exec --no-startup-id dunst
 exec_always --no-startup-id xautolock -time 5 -locker "~/.config/lock" -corners ---- -secure -notify 30 -notifier "notify-send -u critical -t 10000 'LOCKING in 30s'" -detectsleep
 workspace_auto_back_and_forth yes

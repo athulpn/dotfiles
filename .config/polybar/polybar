@@ -6,40 +6,18 @@ primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color2:#222}
 alert = ${xrdb:color3:#222}
 
-[bar/left]
-monitor = DP1
-width = 100%
-height = 25
-
-;background = #1a1a1a
-;foreground = #ffffff
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-color = ${bar/top.background}
-line-size = 16
-
-
-spacing = 2
-padding-right = 5
-module-margin = 4
-
-font-0 = NotoSans Nerd Font:size=8;-1
-font-1 = Material Icons:size=10;0
-font-2 = Source Code Pro:size=8:antialias=false;-2
-font-3 = FontAwesome:size=10;0
-
-modules-left = i3 mpd  
-modules-center = task date
-modules-right =  polypomo memory cpu volume backlight wireless-network battery 
-
 [bar/top]
 monitor = eDP1
 width = 100%
-height = 20
+height = 23
+
+#border-left-size = 10
+#border-right-size = 10
+#border-top-size = 10
+#border-bottom-size = 10
 
 background = #282a36
-foreground = #ffffff
+foreground = #ABB2BF
 ;background = ${colors.background}
 ;foreground = ${colors.foreground}
 
@@ -48,10 +26,10 @@ line-size = 16
 
 
 spacing = 2
-padding-right = 5
+padding-right = 2
 module-margin = 4
 
-font-0 = NotoSans Nerd Font:size=8;-1
+font-0 = NotoSans Nerd Font:size=9;-1
 font-1 = Material Icons:size=10;0
 font-2 = Source Code Pro:size=8:antialias=true;-2
 font-3 = FontAwesome:size=10;0
@@ -96,7 +74,7 @@ bar-empty-foreground = #44
 type = internal/battery
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
+format-charging = %{F#98C379}<animation-charging>%{F--} <label-charging>
 format-discharging =  <label-discharging> <ramp-capacity>
 format-full = <ramp-capacity> <label-full>
 
@@ -143,8 +121,8 @@ label-mode-background = #e60053
 ;   %output%
 ; Default: %icon%  %name%
 label-focused = %name%
-label-focused-foreground = #ffffff
-label-focused-background = #3f3f3f
+label-focused-foreground = #1E2127
+label-focused-background = #98C379
 ;label-focused-underline = #fba922
 label-focused-padding = 4
 
@@ -181,14 +159,14 @@ label-urgent-padding = 4
 ; Separator in between workspaces
 label-separator = |
 label-separator-padding = 2
-label-separator-foreground = #ffb52a
+label-separator-foreground = #E06C75
 
 
 [module/cpu]
 type = internal/cpu
 interval = 0.5
 format = <label> <ramp-coreload>
-label = CPU %percentage%%
+label =  %percentage%%
 
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 2
@@ -223,7 +201,7 @@ date-alt = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
 [module/memory]
 type = internal/memory
 format = <label> 
-label = MEM %mb_used%
+label = MEM %mb_used% 
 
 bar-used-width = 30
 bar-used-foreground-0 = #aaff77
@@ -279,11 +257,11 @@ label-connected = %local_ip%  %essid%    %downspeed%
 label-disconnected =    not connected
 label-disconnected-foreground = #66
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = %{F#f06C75}%{F--}
+ramp-signal-1 = %{F#b06c75}%{F--}
+ramp-signal-2 = %{F#D78F4B}%{F--}
+ramp-signal-3 = %{F#98b379}%{F--}
+ramp-signal-4 = %{F#98f379}%{F--}
 
 animation-packetloss-0 = 
 animation-packetloss-0-foreground = #ffa64c
